@@ -2,11 +2,10 @@ import asyncio
 import os
 import sys
 
-sys.path.insert(0, "/app/env")
+sys.path.insert(0, os.getcwd())
 from models import CybergymCrashPocAction, CybergymCrashPocObservation  # noqa: E402
-from openenv.core import EnvClient  # noqa: E402
 
-from cybergym_crash_poc.client import CybergymCrashPocEnv  # noqa: E402
+from client import CybergymCrashPocEnv  # noqa: E402
 
 URL = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:8000"
 INDEX = int(sys.argv[2]) if len(sys.argv) > 2 else 0
